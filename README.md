@@ -1,3 +1,8 @@
+License is the CC BY
+This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. CC BY includes the following elements:
+
+
+
 The PSP search API is where all my work on everything and ideas are for new businesses
 Coding 10 is where the newest version of the file is saved   on the ssd blue drive
 This is the main function for my ideas and main code is under the function psp_search_function_api_functions
