@@ -1,0 +1,209 @@
+{% extends 'website_name.html' %}
+
+{% block content %}
+<button id='left' value='left'  onclick="upload_month_data(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">></button>
+<button id='right' value='right'  onclick="upload_month_data(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"><</button>
+
+
+<h3 id="concept"class="text-lg font-semibold">We all struggle with certain issues lets work together to solve them</h3>
+
+<a href="{% url 'start_a_project' %}"><button id='save' value=save {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Start a Project</button></a>
+
+<div class="grid grid-cols-7 bg-blue-100 rounded-lg"> 
+{% for project_type,project_type_photo in project_type_list %}
+<div>
+<h3 onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ project_type }}</h3>
+<img id="photo"class="text-lg font-semibold" src='{{ project_type_photo }}'></img>
+</div>
+{% endfor %}
+</div >  
+ 
+
+<div class="grid grid-cols-7 bg-blue-100 rounded-lg"> 
+{% for project_name,main_project_photo,project_description in projects_table_list %}
+ <div>
+   {% if project_name != "None" %}
+<div onclick="open_project_page()" id='{{ project }}'>{{ project }}</div> // for example monday tuesday etc
+   {% endif %}   
+<img id="photo"class="text-lg font-semibold" src='{{ main_project_photo }}'></img>
+
+<div onclick="open_project_page()" id='{{ project }}'>{{ project_description }}</div> 
+</div >  
+</div >  
+{% endfor %} 
+
+
+{% endblock %}
+
+<script>                 
+function upload_projects(element_id) {
+// add preventDefault if necessary here Prevent the form from submitting traditionally
+     const celll_element = document.getElementById(element_id);
+     const current_task_element = document.getElementById("current_task");
+     current_task_element.innerText='Current Task:'+ celll_element.innerText;
+     const params = new URLSearchParams({
+  key1: element_id,
+});
+     const url = `/set-current-task/?${params.toString()}`;
+          fetch(url, {
+             method:'GET',
+             headers:{
+              'Content-Type':'application/json',
+              'X-CSRFToken': getCookie('csrftoken') // CSRF token for protection (if needed)
+
+             }, 
+            })
+            .then((response) => {
+               return response.json(); //converts response to json
+            })
+            .then((data) => {
+            console.log('data:',data)
+            //Perform actions with the response data from the view
+            // send data to fill different grid values 
+            // clear all the tables in the grid
+            var relevent_table_names=data[0].relevent_table_names
+            var table_object_dict = {};
+            var table_objects_array = [];
+            
+            for (const table_namee of relevent_table_names){
+                console.log(table_namee);
+                var query_str_list = ["#",table_namee," tbody"]
+                var query_str=query_str_list.join('')
+                const tableBody = document.querySelector(query_str);
+                tableBody.innerHTML = '';
+                table_object_dict[table_namee]=[];
+                // save table objects
+                //table_objects_array.push(tableBody)
+                table_object_dict[table_namee].push(tableBody); 
+                console.log("object dic");
+
+                console.log(table_object_dict);
+                 }              
+              //console.log(table_objects_dic);
+            fill_grids(data,table_object_dict)// fill all the grids
+            
+                 });                     
+}; 
+function open_project_page(element_id) {
+// add preventDefault if necessary here Prevent the form from submitting traditionally
+     const celll_element = document.getElementById(element_id);
+     const current_task_element = document.getElementById("current_task");
+     current_task_element.innerText='Current Task:'+ celll_element.innerText;
+     const params = new URLSearchParams({
+  key1: element_id,
+});
+     const url = `/set-current-task/?${params.toString()}`;
+          fetch(url, {
+             method:'GET',
+             headers:{
+              'Content-Type':'application/json',
+              'X-CSRFToken': getCookie('csrftoken') // CSRF token for protection (if needed)
+
+             }, 
+            })
+            .then((response) => {
+               return response.json(); //converts response to json
+            })
+            .then((data) => {
+            console.log('data:',data)
+            //Perform actions with the response data from the view
+            // send data to fill different grid values 
+            // clear all the tables in the grid
+            var relevent_table_names=data[0].relevent_table_names
+            var table_object_dict = {};
+            var table_objects_array = [];
+            
+            for (const table_namee of relevent_table_names){
+                console.log(table_namee);
+                var query_str_list = ["#",table_namee," tbody"]
+                var query_str=query_str_list.join('')
+                const tableBody = document.querySelector(query_str);
+                tableBody.innerHTML = '';
+                table_object_dict[table_namee]=[];
+                // save table objects
+                //table_objects_array.push(tableBody)
+                table_object_dict[table_namee].push(tableBody); 
+                console.log("object dic");
+
+                console.log(table_object_dict);
+                 }              
+              //console.log(table_objects_dic);
+            fill_grids(data,table_object_dict)// fill all the grids
+            
+                 });                     
+};       
+   
+function fill_project_grids(data,table_object_dict) {
+      data.forEach(problem => {
+      // get the talbe name
+      table_namee=problem.table;
+      console.log(table_namee);
+      console.log('hi');
+      console.log('hi');
+      tableBody=table_object_dict[table_namee][0];
+      console.log(tableBody);
+      const row = document.createElement('tr');
+      row.id=problem.iterator2
+      row.classList.add('border-b' ,'border-gray-300', 'hover:bg-gray-100');   
+      for (const cell_info of problem.cells){
+      console.log('cell_info');
+      console.log(cell_info.innerText);
+
+      const Cell = document.createElement('td'); 
+      Cell.classList.add(cell_info.px,cell_info.py);
+      if (cell_info.button!="None"){ 
+      
+      console.log('this is a button');
+      const Button = document.createElement('button'); 
+      const divv = document.createElement('div'); 
+
+ 
+      console.log(cell_info.button[2]);
+      Button.classList.add("bg-blue-500","text-white","px-4","py-2","rounded-lg","hover:bg-blue-600","focus:outline-none");
+      Button.innerText = cell_info.button[3];
+      Button.type=cell_info.button[1];
+      Button.value=cell_info.button[4]+problem.iterator2
+      console.log("this is the end button");
+      console.log(cell_info.button[0]);
+      console.log(Button.onclick);
+      console.log(Button);
+      function modify_info2(){iteratorr=Button.value;
+      modify_info(iteratorr)
+      console.log('meowwwwwww');}
+      Button.addEventListener('click', modify_info2)
+    
+      //Button.onclick =modify_info;   
+      
+      Cell.appendChild(Button)
+      }
+      else {
+      console.log('this is not a button');
+      Cell.id=problem.iterator;
+      Cell.innerText = cell_info.innerText;
+      }
+      if (cell_info.onclick!="None"){
+      
+      function set_current_task2(){iteratorrr=problem.iterator;
+      set_current_task(iteratorrr)
+      console.log('hehehehe');}
+      Cell.addEventListener('click', set_current_task2)
+      
+      //Cell.onclick =set_current_task;
+      }
+      console.log(cell_info.button[2]);  
+      
+      if (cell_info.contenteditable!="None"){
+      Cell.contentEditable = "true";
+
+      console.log("conent editable"); 
+      }             
+      row.appendChild(Cell);  
+      }
+      tableBody.appendChild(row);   
+      }); }         
+          
+           
+</script>
+
+
+
