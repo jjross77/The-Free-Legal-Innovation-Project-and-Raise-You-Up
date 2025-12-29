@@ -1,6 +1,7 @@
-License is the CC BY
-This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. CC BY includes the following elements:
-
+CC BY-NC
+This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. CC BY-NC includes the following elements:
+ BY: credit must be given to the creator.
+NC: Only noncommercial uses of the work are permitted.
 
 
 The PSP search API is where all my work on everything and ideas are for new businesses
