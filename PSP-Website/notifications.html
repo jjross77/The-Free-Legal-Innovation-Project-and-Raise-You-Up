@@ -1,0 +1,35 @@
+{% extends 'website_name.html' %}
+
+{% block content %}
+<h3 onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">Notifications</h3>
+
+<!-- notification_table -->
+<div class="col-span-1 bg-blue-100 p-4 rounded-lg shadow-md">
+      <table class="min-w-full table-auto border-collapse" id="task_info_table">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600">
+            <th class="px-6 py-3 text-left">Notification</th>
+            <th class="px-6 py-3 text-left">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for notification_title, notification_content,notification_link,iterator1 in profile_notification_table_list %}
+         <tr class="border-b border-gray-300 hover:bg-gray-100">
+          <td onclick="download_document()"  id='{{ iterator1 }}' class="px-6 py-4">{{ task_document }} </td>
+          <td class="px-6 py-4" >{{ task_document_content }} id='{{ iterator1 }}' </td>
+          <td  class="px-1 py-1">  <button id='save' value=save {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">save</button></td>
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">delete</button></td> 
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Share</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Shared by</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Connect</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Download</button></td> 
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  <button onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"> if not edited Sources</button></td> 
+
+         </tr>
+  {% endfor %} 
+
+        </tbody>
+      </table>
+    </div>  
+
+{% endblock %}
