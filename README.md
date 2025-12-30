@@ -3,12 +3,33 @@ All files and folders in this repository are protected under the CC BY-NC licens
  BY: credit must be given to the creator.
 NC: Only noncommercial uses of the work are permitted.
 
+Under the PSP API folder are all of my different ideas stored as functions to still be built and added to the problem-solving program under file psp_search_function_api_functions.py.
 
-The PSP search API is where all my work on everything and ideas are for new businesses
-Coding 10 is where the newest version of the file is saved   on the ssd blue drive
-This is the main function for my ideas and main code is under the function psp_search_function_api_functions
-And under business methods there are different functions to use psp_search_function_api_functions  doc
-add_strategy_test # this is the main one which is a separate doc
-generate_dag_from_current_position_to_figure_out_best_actions_you_can_take_for_different_objectives# rank these life possible actions by looking at objectives
-generate_all_life_possible_actions_and_effects_dic# this is to grab data off of wikipeida
-Open
+The PSP API would generate all the documents you might need to fill out and create in your workflow and will also generate documents that are tangentially related to the task you are trying to solve, giving you a different way a task might be completed or a problem to be solved.
+
+ The other part of the PSP API is that it would be able to tell you future actions you might wish to take based on your current positionality. The basic idea I had for this was looking at the stories of other people's lives on Wikipedia and then sorting these people to create a list of  all relevant people on Wikipedia  someone might look to decide on the next chapter of their life.  The program would suggest courses of action that you might wish to take which are guided by objectives like helping the most people or making the most money. And using Wikipedia to accomplish the task.
+
+The FLIP folder has an neural network to sort 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
