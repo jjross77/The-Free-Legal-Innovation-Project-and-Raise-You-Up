@@ -26,7 +26,7 @@ once you have a hosting service and have changed the domain name to the right ex
 5. First download DEBERTA from hugging face https://huggingface.co/microsoft/deberta-v3-base. For the rest of the NN in the pipeline you need to find the data then format it so it can train those neural networks. Repeat this process for all the neural networks. The law finder I used spacy https://spacy.io/usage/linguistic-features to find law data so when word vectors are put through it differentiates between law and not law, the non sentence finder differentiate between words you want or don’t want. To create the dataset for this one looks for useless words by looking at a document categorizing words as wanted or not wanted words. For part of speech use Spacy and train a neural network using their results In the pipeline by running over each sentence https://spacy.io/usage/linguistic-features. The code for case categorizing is in pipe_line_to_process_documents6 document.
 
 
-
+APPENDIX A WHERE THE CODE IS ON GITHUB
 Under the PSP API folder are all of my different ideas stored as functions to still be built and added to the problem-solving program under file psp_search_function_api_functions.py.
 
 The PSP API on the raise you up site would generate all the documents you might need to fill out and create in your workflow and will also generate documents that are tangentially related to the task you are trying to solve, giving you a different way a task might be completed or a problem to be solved.
@@ -39,11 +39,7 @@ The PSP API would work in the Django tailwind PSP website folder. The stack for 
 
 PS you are always loved.
 
-APPENDIX
-
-
-
-
+APPENDIX B
 
 You will need to create a Django site then you would add these files I attached in the email to it to get it to run replacing the basic ones that are loaded in by creating a Django app
 https://docs.djangoproject.com/en/5.2/intro/install/
