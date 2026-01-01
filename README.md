@@ -27,6 +27,7 @@ once you have a hosting service and have changed the domain name to the right ex
 
 
 APPENDIX A WHERE THE CODE IS ON GITHUB
+
 Under the PSP API folder are all of my different ideas stored as functions to still be built and added to the problem-solving program under file psp_search_function_api_functions.py.
 
 The PSP API on the raise you up site would generate all the documents you might need to fill out and create in your workflow and will also generate documents that are tangentially related to the task you are trying to solve, giving you a different way a task might be completed or a problem to be solved.
