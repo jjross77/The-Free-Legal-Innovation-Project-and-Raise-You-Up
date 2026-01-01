@@ -1,4 +1,4 @@
-This work is protected under the under CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+This work is protected under the CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
 
 1. What I want Raise You Up to be. Make it a GitHub for solving world problems where everyone works together on a single page to solve a world problem like climate change submitting different plans that could be taken to solve these problems, and they could donate money to people working on a world problem page to take the plan into reality but having a million people working together on a single page and devising plans to solve a problem I think would change the world for the better and is the best thing ever.
  
