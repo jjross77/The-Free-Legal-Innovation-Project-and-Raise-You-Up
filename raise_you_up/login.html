@@ -1,0 +1,102 @@
+<!doctype html>
+<htm class="h-full bg-white"l>
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+{% load static %}
+<link href="{% static 'output.css' %}" rel="stylesheet">
+</head>
+<body class="h-full">
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+  <!-- The element you want to center -->
+<br> 
+<div class="bg-blue-300 h-10 flex items-center justify-center rounded">
+
+  <p class="text-xl text-blue-100"> Come Make an Impact on RaiseYouUp </p>
+</div>
+
+    <img class="mx-auto h-20 w-auto" src="{% static 'raise_you_up.png' %}" alt="RaiseYouUp">
+
+  <div class="mt-2 sm:mx-auto sm:w-full sm:max-w-sm">
+  
+  <form class=" rounded border-blue-300 border-2 "   method="post" action="{% url 'login' %}">
+  <br> 
+  <br> 
+{% csrf_token %}
+    <p >Username or Email</p>
+    <p class=" border rounded " >{{ form.username }}</p>
+    <p >{{ form.password.label_tag }}</p>
+    <p class="border rounded">{{ form.password }}</p>
+
+<br> 
+<input class="bg-blue-500 text-white px-3 py-1  hover:bg-blue-600 focus:outline-none rounded justify-center "  type="submit" value="Sign In">
+ <a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">Forgot your password?</a>
+
+<input type="hidden" name="next" value="{{ next }}">
+<br> 
+<br> 
+ 
+</form>
+
+
+</div>
+
+ <div class="flex items-center justify-center border-blue-100 ">
+  <p><a href="{% url 'register' %}">Create an Account</a></p>
+   <br> 
+   </div>
+  <div class="flex items-center justify-center border-blue-100 ">
+   <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+    <br> 
+    </div>
+   
+     <div class="flex items-center justify-center border-blue-100 ">
+
+
+
+ <a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">Contact Us</a>
+ <br> 
+ </div>
+
+  <div class="flex items-center justify-center border-blue-100 ">
+
+<a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">About Us</a>
+<br> 
+</div>
+
+  <div class="flex items-center justify-center border-blue-100 ">
+
+<a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">Our Mission</a>
+<br> 
+</div>
+
+  <div class="flex items-center justify-center border-blue-100 ">
+
+ <a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">Resources</a>
+ <br>
+ </div>
+ 
+  <div class="flex items-center justify-center border-blue-100 ">
+
+<a class="block text-gray-700 text-sm font-bold mb-2" href="{% url 'password_reset' %}">Learn More About Our Projects</a>
+</div>
+
+</body>
+</html>
+
+
+
+

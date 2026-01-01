@@ -1,0 +1,235 @@
+{% extends 'website_name.html' %}
+
+{% block content %}
+
+ <!-- A button to open the popup form -->
+
+ 
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+} 
+</script> 
+
+
+<!-- intital_profile_info -->
+<button class="open-button" onclick="openForm()">Add Info</button>
+<div class="invisible" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<button class="open-button" onclick="openForm()">Edit Info</button>
+<div class="invisible" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+
+{% for profile_name, profile_image,profile_description,perosnal_profile iterator1 in profile_info_list %}
+ <h3 onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ profile_name }}</h3>
+ <img id="photo"class="text-lg font-semibold" src='{{ profile_image }}'></img>
+ <p onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ profile_description }}</p>
+{% endfor %} 
+<!-- profile_content_list-->
+{% for resume, project_image,project_description, iterator1 in profile_content_list %}
+<div class="grid grid-cols-1 md:grid-cols-5  bg-blue-100 rounded-lg"> 
+
+<!-- resume_table -->
+<button class="open-button" onclick="openForm()">Add Resume Content</button>
+<!-- The form -->
+<div class="invisible" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<button class="open-button" onclick="openForm()">Edit Resume</button>
+<!-- The form -->
+<div class="invisible" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+
+<div class="col-span-1 bg-blue-100 p-4 rounded-lg shadow-md">
+      <table class="min-w-full table-auto border-collapse" id="task_info_table">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600">
+            <th class="px-6 py-3 text-left">Task Document</th>
+            <th class="px-6 py-3 text-left">Task Document Content</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for notification_title, notification_content,notification_link,iterator1 in task_info_list %}
+         <tr class="border-b border-gray-300 hover:bg-gray-100">
+          <td onclick="download_document()"  id='{{ iterator1 }}' class="px-6 py-4">{{ task_document }} </td>
+          <td class="px-6 py-4" >{{ task_document_content }} id='{{ iterator1 }}' </td>
+          <td  class="px-1 py-1">  <button id='save' value=save {{ iterator1 }}  onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">save</button></td>
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}   onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">delete</button></td> 
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Share</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}  onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Shared by</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}   onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Connect</button></td> 
+           <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}   onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Download</button></td> 
+          <td  class="px-1 py-1">  <button id='delete' value=delete {{ iterator1 }}   onclick="modify_info(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"> if not edited Sources</button></td> 
+
+         </tr>
+  {% endfor %} 
+
+        </tbody>
+      </table>
+    </div>  
+    
+    
+ <!-- perosnal_projects_grid-->
+<button class="open-button" onclick="openForm()">Add Project</button>
+<div class="invisible" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Login</h1>
+
+      <label for="email"><b>Email</b></label>
+      <input type="file" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+ </div>
+  
+  
+  
+<button class="open-button" onclick="openForm()">Edit Projects</button>
+<div class="invisible" id="myForm">
+   <form action="/action_page.php" class="form-container">
+     <h1>Login</h1>
+
+     <label for="email"><b>Email</b></label>
+     <input type="text" placeholder="Enter Email" name="email" required>
+
+     <label for="psw"><b>Password</b></label>
+     <input type="password" placeholder="Enter Password" name="psw" required>
+
+     <button type="submit" class="btn">Login</button>
+     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+   </form>
+ </div>
+ 
+ 
+
+{% for personal_project_name, project_image,project_description, iterator1 in profile_content_list %}
+<div class="grid grid-cols-1 md:grid-cols-5  bg-blue-100 rounded-lg"> 
+  {% for profile_name, profile_image,profile_slogan in profile_requests_list %}
+  <div>
+  <h3 onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ project_type }}</h3>
+  <img id="photo"class="text-lg font-semibold" src='{{ main_project_photo }}'></img>
+  <p onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ project_type }}</p>
+  <button id='left' value=save {{ iterator1 }} onclick="send_network_request(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Accept</button>
+   <button id='left' value=save {{ iterator1 }} onclick="send_network_request(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Decline</button>
+
+  </div>
+  {% endfor %}
+</div>
+
+<!-- personal_photos_grid -->
+<button class="open-button" onclick="openForm()">Add Photos</button>
+<!-- The form -->
+<div class="invisible" id="myForm">
+   <form action="/action_page.php" class="form-container">
+     <h1>Login</h1>
+
+     <label for="email"><b>Email</b></label>
+     <input type="file" placeholder="Enter Email" name="email" required>
+
+     <label for="psw"><b>Password</b></label>
+     <input type="password" placeholder="Enter Password" name="psw" required>
+
+     <button type="submit" class="btn">Login</button>
+     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+   </form>
+</div>
+ 
+
+
+<button class="open-button" onclick="openForm()">Edit Photos</button>
+ <!-- The form -->
+<div class="invisible" id="myForm">
+   <form action="/action_page.php" class="form-container">
+     <h1>Login</h1>
+
+     <label for="email"><b>Email</b></label>
+     <input type="file" placeholder="Enter Email" name="email" required>
+
+     <label for="psw"><b>Password</b></label>
+     <input type="password" placeholder="Enter Password" name="psw" required>
+
+     <button type="submit" class="btn">Login</button>
+     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+   </form>
+</div>
+
+ 
+{% for personal_photos, project_image,project_description, iterator1 in profile_content_list %}
+<div class="grid grid-cols-1 md:grid-cols-5  bg-blue-100 rounded-lg"> 
+  {% for profile_name, profile_image,profile_slogan in profile_requests_list %}
+  <div>
+  <h3 onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ project_type }}</h3>
+  <img id="photo"class="text-lg font-semibold" src='{{ main_project_photo }}'></img>
+  <p onclick="upload_projects()" id='{{ project_type }}'class="text-lg font-semibold">{{ project_type }}</p>
+  <button id='left' value=save {{ iterator1 }} onclick="send_network_request(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Accept</button>
+   <button id='left' value=save {{ iterator1 }} onclick="send_network_request(this.value)"  type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Decline</button>
+
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+{% endblock %}
