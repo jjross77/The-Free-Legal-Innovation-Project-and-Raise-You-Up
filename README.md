@@ -1,3 +1,5 @@
+
+
 1. What I want Raise You Up to be. Make it a GitHub for solving world problems where everyone works together on a single page to solve a world problem like climate change submitting different plans that could be taken to solve these problems, and they could donate money to people working on a world problem page to take the plan into reality but having a million people working together on a single page and devising plans to solve a problem I think would change the world for the better and is the best thing ever.
  
 2. What I want FLIP to be is a website where all the free technology lawyers or layman people could use is there so they could have legal services delivered at a more affordable amount. And it would provide free legal education and legal information on top of all available free resources on the internet in terms of Legal Tech that my web spyder would find.
@@ -47,16 +49,6 @@ The Sparrow xlsx is the data to train a new Fact Issue Application NN model. If 
  First download DEBERTA from hugging face https://huggingface.co/microsoft/deberta-v3-base. For the rest of the NN in the pipeline you need to find the data then format it so it can train those neural networks. Repeat this process for all the neural networks. The law finder I used spacy https://spacy.io/usage/linguistic-features to find law data so when word vectors are put through it differentiates between law and not law, the non sentence finder differentiate between words you want or don’t want. To create the dataset for this one looks for useless words by looking at a document categorizing words as wanted or not wanted words. For part of speech use Spacy and train a neural network using their results In the pipeline by running over each sentence https://spacy.io/usage/linguistic-features. The code for case categorizing is in pipe_line_to_process_documents6 document.
 
 
-
- All files and folders in this repository are protected under the Attribution-ShareAlike 4.0 International CC BY-SA 4.0 license. "You are free to:
-Share — copy and redistribute the material in any medium or format for any purpose, even commercially.
-Adapt — remix, transform, and build upon the material for any purpose, even commercially.
-The licensor cannot revoke these freedoms as long as you follow the license terms.
-Under the following terms:
-Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
-https://creativecommons.org/licenses/by-sa/4.0/deed.en
 
 
 
