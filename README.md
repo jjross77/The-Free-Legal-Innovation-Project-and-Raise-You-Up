@@ -1,9 +1,13 @@
  CC BY-SA 4.0 License https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
-
- This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms. CC BY-SA includes the following elements:
-BY: credit must be given to the creator.
-SA: Adaptations must be shared under the same terms.
-
+You are free:
+    to Share—copy and redistribute the material in any medium or format
+    to Adapt—remix, transform, and build upon the material
+for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+    Attribution—You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+    Share Alike—If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+    No additional restrictions—You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 1. What I want Raise You Up to be. Make it a GitHub for solving world problems where everyone works together on a single page to solve a world problem like climate change submitting different plans that could be taken to solve these problems, and they could donate money to people working on a world problem page to take the plan into reality but having a million people working together on a single page and devising plans to solve a problem I think would change the world for the better and is the best thing ever.
  
