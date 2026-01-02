@@ -1,4 +1,5 @@
- CC BY-SA 4.0 License https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+ CC BY-SA 4.0 License https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License
+ 
 You are free:
     to Share—copy and redistribute the material in any medium or format
     to Adapt—remix, transform, and build upon the material
